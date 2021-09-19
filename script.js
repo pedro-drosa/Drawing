@@ -9,13 +9,13 @@ let screen = document.querySelector('#tela');
 let context = screen.getContext('2d');
 
 //Events
-document.querySelectorAll('.colorArea .color').forEach( (item) => {
+document.querySelectorAll('.colorArea .color').forEach((item) => {
   item.addEventListener('click', handleColorClick);
 });
 
 screen.addEventListener('mousedown', handleMouseDown); // When clicking with the mouse, activate -> drawing mode
 
-screen.addEventListener('mousemove',handleMouseMove); // If the mouse is moving and is pressed -> draw
+screen.addEventListener('mousemove', handleMouseMove); // If the mouse is moving and is pressed -> draw
 
 screen.addEventListener('mouseup', handleMouseUp); // On mouse up, disable -> drawing mode
 
@@ -35,7 +35,7 @@ function handleMouseDown(event) {
 }
 
 function handleMouseMove(e) {
-  if(canDraw) {
+  if (canDraw) {
     draw(e.pageX, e.pageY);
   }
 }
@@ -50,7 +50,7 @@ function draw(x, y) {
 
   context.beginPath();
   context.lineWidth = 5;
-  context.lineJoin = "round";
+  context.lineJoin = 'round';
   context.moveTo(mouseX, mouseY);
   context.lineTo(pointX, pointY);
   context.closePath();
